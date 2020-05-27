@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Markdown to HTML</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="global-container">
+    <header class="uk-container uk-container-expand uk-margin-small-top">
+      <h1 class="uk-text-center">Markdown→HTML変換</h1>
+      <p>
+        Markdownの書き方は、<a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank">Markdown記法 チートシート</a>をご参照ください。<br>
+        変換HTMLをファイルに利用するスタイルシートとして、<a href="css/Clearness.css" download="style.css">Chrome Markdown Stylesheet</a>(クリックでダウンロード)をご利用ください。<br>
+      </p>
+    </header>
+    <hr>
+    <div class="container">
+      <section class="markdown2html">
+        <div class="left-side">
+          <section class="markdownarea">
+            <h2>Markdownの入力フォーム</h2>
+            <form id="editor-form" class="">
+              <textarea id="editor" name="markdown" rows="8" cols=50% ></textarea>
+            </form>
+            <button type="button" id="preview_button">Preview</button>
+          </section>
+          <hr style="border: 3px solid #ebebeb;" >
+          <section class="htmlarea">
+            <h2>変換結果コピペエリア</h2>
+            <form id="editor-form" class="">
+              <textarea onclick="this.select();" id="result" class="uk-textarea" name="result"  rows="8"  cols=50% readonly></textarea>
+            </form>
+            <button type="button" id="result_copy_button">Copy text</button>
+          </section>
+        </div>
+        
+        <div class="right-side">
+          <section class="previewarea">
+            <h2>HTMLに変換した結果</h2>
+            <button type="button" id="save_button" href="#" >Save HTML</button>
+            <!-- <button type="button" id="preview_copy_button">Copy preview</button> -->
+            <div class="col-md-12 ml-auto mr-auto text-left" style="border: 3px solid #ebebeb;">
+              <div class="preview" id="marked-preview"></div>
+            </div>
+          </section>
+        </div>
+
+      </section>
+    </div>
+    <hr>
+    <section class="reference">
+      <p>参照資料：Qiita「<a href="https://qiita.com/_carbonara_/items/274b26ae45c7d4372bdf" target="_blank">Markdown→HTMLに変換したい</a>」の記事をもとに変換用サイトを準備しました。<br>
+      下のパッケージを利用してます。</p>
+      <ol>
+        <li><a href="https://github.com/sparksuite/simplemde-markdown-editor" target="_blank">SimpleMDE（Markdown-Editor）</a></li>
+        <li><a href="https://github.com/markedjs/marked" target="_blank">Marked（convert engine for Markdown to HTML）</a></li>
+      </ol>
+    </section>
+    <footer>
+      <p class="uk-text-center">Copyright &copy; 2020-2019 sg.tao.so, 2018 konightch All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="script/simplemde.min.js"></script>
+  <script src="script/marked.min.js"></script>
+  <script src="script/jquery-1.12.4.min.js"></script>
+  <script src="script/main.js"></script>
+</body>
+</html>
