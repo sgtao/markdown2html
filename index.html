@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Markdown to HTML</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -12,17 +12,13 @@
   <div class="global-container">
     <header class="uk-container uk-container-expand uk-margin-small-top">
       <h1 class="uk-text-center">Markdown→HTML変換</h1>
-      <p>
-        Markdownの書き方は、<a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank">Markdown記法 チートシート</a>をご参照ください。<br>
-        変換HTMLをファイルに利用するスタイルシートとして、<a href="css/Clearness.css" download="style.css">Chrome Markdown Stylesheet</a>(クリックでダウンロード)をご利用ください。<br>
-      </p>
     </header>
     <hr>
     <div class="container">
       <section class="markdown2html">
         <div class="left-side">
           <section class="markdownarea">
-            <h2>Markdownの入力フォーム</h2>
+            <h2>①Markdownの入力フォーム</h2>
             <form id="editor-form" class="">
               <textarea id="editor" name="markdown" rows="8" cols=50% ></textarea>
             </form>
@@ -30,7 +26,7 @@
           </section>
           <hr style="border: 3px solid #ebebeb;" >
           <section class="htmlarea">
-            <h2>変換結果コピペエリア</h2>
+            <h2>※参考）変換結果のHTML記法</h2>
             <form id="editor-form" class="">
               <textarea onclick="this.select();" id="result" class="uk-textarea" name="result"  rows="8"  cols=50% readonly></textarea>
             </form>
@@ -40,7 +36,7 @@
         
         <div class="right-side">
           <section class="previewarea">
-            <h2>HTMLに変換した結果</h2>
+            <h2>②HTMLに変換した結果</h2>
             <button type="button" id="save_button" href="#" >Save HTML</button>
             <!-- <button type="button" id="preview_copy_button">Copy preview</button> -->
             <div class="col-md-12 ml-auto mr-auto text-left" style="border: 3px solid #ebebeb;">
@@ -51,6 +47,30 @@
 
       </section>
     </div>
+    <hr>
+    <section class="usage">
+      <h2 id="利用方法：">利用方法：1.⇒2.⇒3.の順で操作してください。</h2>
+      <ol>
+        <li>「①Markdownの入力フォーム」にMarkdown記法で入力
+          <ul>（例：&quot;- hogehoge&quot;を①の枠に入力）</ul></li>
+        <li>「①Markdownの入力フォーム」の&quot;Preview&quot;ボタンをクリック
+          <ul><li>⇒「②HTMLに変換した結果」に表示される</li></ul>
+        </li>
+        <li>「②HTMLに変換した結果」の&quot;Save HTML&quot;ボタンクリック（Yammerの場合別方法あります※）
+          <ul>
+            <li>3-1. 別ウインドウで、HTMLタイトルとファイル名を入力</li>
+            <li>3-2. ＰＣの&quot;ダウンロード&quot;フォルダにファイル作成されます</li>
+            <li>（3-1.で何も入力しないと、&quot;null.html&quot;が作成されます）</li>
+          </ul>
+        </li>
+      </ol>
+      <p>※<b>Yammerの場合</b>、3.の代わりに「②HTMLに変換した結果」の内容をYammerにコピペ投稿し、Yammer側で修飾して下さい</p>
+      <hr>
+      <p>
+        <b>Markdownの書き方</b>は、<a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank">Markdown記法 チートシート</a>をご参照ください。<br>
+        変換HTMLをファイルに利用するスタイルシートとして、<a href="css/Clearness.css" download="style.css">Chrome Markdown Stylesheet</a>(クリックでダウンロード)をご利用ください。<br>
+      </p>
+    </section>
     <hr>
     <section class="reference">
       <p>参照資料：Qiita「<a href="https://qiita.com/_carbonara_/items/274b26ae45c7d4372bdf" target="_blank">Markdown→HTMLに変換したい</a>」の記事をもとに変換用サイトを準備しました。<br>
