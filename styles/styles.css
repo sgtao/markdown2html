@@ -44,6 +44,7 @@ footer {
   background: #88a; }
 
 .htmlarea {
+  display: none;
   margin-bottom: 10px;
   background: #8c8; }
 
