@@ -6,7 +6,7 @@
   <title>Markdown to HTML</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div class="global-container">
@@ -68,7 +68,7 @@
       <hr>
       <p>
         <b>Markdownの書き方</b>は、<a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank">Markdown記法 チートシート</a>をご参照ください。<br>
-        変換HTMLをファイルに利用するスタイルシートとして、<a href="css/Clearness.css" download="style.css">Chrome Markdown Stylesheet</a>(クリックでダウンロード)をご利用ください。<br>
+        変換HTMLをファイルに利用するスタイルシートとして、<a href="styles/skeltons/Clearness.css" download="style.css">Chrome Markdown Stylesheet</a>(クリックでダウンロード)をご利用ください。<br>
       </p>
     </section>
     <hr>
@@ -85,10 +85,9 @@
     </footer>
   </div>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-  <script src="script/simplemde.min.js"></script>
-  <script src="script/marked.min.js"></script>
-  <script src="script/jquery-1.12.4.min.js"></script>
-  <script src="script/main.js"></script>
+  <script src="scripts/vendors/jquery-1.12.4.min.js"></script>
+  <script src="scripts/venders/simplemde.min.js"></script>
+  <script src="scripts/vendors/marked.min.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
