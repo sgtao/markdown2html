@@ -35,6 +35,7 @@ footer {
 .markdown2html {
   display:flex ;
   flex-direction: row;
+  height: 80vh;
 }
 .left-side {
   float: left;
@@ -45,23 +46,22 @@ footer {
 .markdownarea {
   margin-bottom: 10px;
   background: #88a;
+  height: 100%;
 }
 .htmlarea {
-  margin-bottom: 10px;
-  background: #8c8;
+  display: none;
 }
 .right-side {
   background: #fff;
   float: right;
   position: center;
-  width: 40%;
+  width: 50%;
   margin: 20px;
 }
 .previewarea {
   margin-bottom: 10px;
   background: #fff;
 }
-
 /* preview area styles */
 .previewarea {
   margin: 10px;
