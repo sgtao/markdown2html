@@ -3,6 +3,7 @@
 {
   const preview_button = document.getElementById("preview_button");
   const copy_button = document.getElementById("copy_button");
+  const editor_form = document.getElementById("editor-form");
 
   var simplemde = new SimpleMDE({
     element: document.getElementById('editor-main'),
@@ -28,12 +29,17 @@
     xhtml: false
   });
 
-  preview_button.addEventListener('click', () => {
+  function convert_md2html(e) {
+    console.log('conver md2html');
     var markdown = document.getElementById("editor").value;
     var html = marked(markdown);
     $('#marked-preview').html(html);
-
     $('#result').val(html);
+  }
+  preview_button.addEventListener('click', convert_md2html);
+  editor_form.addEventListener('change', () => {
+    console.log('detect changed.');
+    convert_md2html;
   });
 
   function copy_to_clipboard(idname, message) {
