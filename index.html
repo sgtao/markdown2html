@@ -4,6 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Markdown to HTML</title>
+  <!-- show loader by pace.js (https://codebyzach.github.io/pace/) -->
+  <!-- refer from https://gimmicklog.com/javascript/614/ -->
+  <link rel="stylesheet" href="styles/vendors/loading-bar.css">
+  <script src="scripts/vendors/pace.min.js"></script>
+  <!-- end of loader -->
   <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css">  
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -13,6 +18,10 @@
   <div class="global-container">
     <header class="uk-container uk-container-expand uk-margin-small-top">
       <h1 class="uk-text-center">Markdown→HTML変換</h1>
+      <div class="abstruct">
+        ①Markdownを②HTMLへ変換します。
+        <p style="color:red">（①の入力で反映されない場合、「Preview」ボタンをクリックして下さい）</p>
+      </div>
     </header>
     <hr>
     <main class="container">
@@ -66,7 +75,6 @@
       <p>※<b>Yammerの場合</b>、3.の代わりに「②HTMLに変換した結果」の内容をYammerにコピペ投稿し、Yammer側で修飾して下さい</p>
       <hr>
       <p>
-        <b>Markdownの書き方</b>は、<a href="https://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank">Markdown記法 チートシート</a>をご参照ください。<br>
         変換HTMLをファイルに利用するスタイルシートとして、<a href="styles/skeltons/Clearness.css" download="style.css">Chrome Markdown Stylesheet</a>(クリックでダウンロード)をご利用ください。<br>
       </p>
     </section>

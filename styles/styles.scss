@@ -1,23 +1,46 @@
 body {
   font-size: 14px;
   font-family: Verdana, sans-serif;
-  background: #dbb;
-  color: #111;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
 }
-
 p {
   line-height: 2;
 }
-
 .global-container {
   margin: 0 auto;
-  width: 100%;
+  background: #dbb;
+  color: #111;
   display: inline-block;
   position: relative;
 }
-
+// loader style
+.pace {
+        margin:0 auto;
+        height: 80%;
+        width: 80%;
+        top: 30vh;
+        &::after {
+                content: 'Markdown2HTML';
+                font-size: 24px;
+                position: absolute;
+                color:#caa;
+                background-color: white;
+                z-index: 10;
+                top: 60px;
+                left: 40px;
+        }
+}
+.pace-running {
+        .global-container {
+                opacity: 0;
+        }
+}
+.pace-done .global-container {
+        transition: opacity 3s;
+        opacity: 1;
+}
+// end of loader style
 header {
 	height: auto;
   align-items: flex-start;
