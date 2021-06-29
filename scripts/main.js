@@ -3,7 +3,7 @@
 {
   const preview_button = document.getElementById("preview_button");
   const copy_button = document.getElementById("copy_button");
-  const editor_form = document.getElementById("editor-form");
+  const markdown = document.getElementById("editor");
 
   var simplemde = new SimpleMDE({
     element: document.getElementById('editor-main'),
@@ -18,7 +18,6 @@
     status: false,
     indentWithTabs: false
   })
-
   marked.setOptions({
     pedantic: false,
     gfm: true,
@@ -28,19 +27,45 @@
     smartypants: false,
     xhtml: false
   });
-
-  function convert_md2html(e) {
-    console.log('conver md2html');
-    var markdown = document.getElementById("editor").value;
-    var html = marked(markdown);
-    $('#marked-preview').html(html);
-    $('#result').val(html);
+  // convert markdown to html
+  function convert_md2html(markdown_value) {
+    if (markdown_value != null && markdown.value != undefined) {
+      console.log('convert by md2html.' + markdown_value);
+      let html = marked(markdown_value);
+      $('#marked-preview').html(html);
+      $('#result').val(html);
+    } else {
+      console.log('markdown_value is ' + markdown.value);
+    }
   }
-  preview_button.addEventListener('click', convert_md2html);
-  editor_form.addEventListener('change', () => {
-    console.log('detect changed.');
-    convert_md2html;
+  preview_button.addEventListener('click', (event) => {
+    convert_md2html(markdown.value);
   });
+  // change even listener is so late that try to use setInterval
+  // markdown.addEventListener('change', (event) => {
+  //   console.log('detect changed.');
+  //   convert_md2html(event);
+  // });
+  let last_edit_count  = 0;
+  let last_edit_chksum = 0;
+  function string_checksum(msg) {
+    let msgUint8 = new TextEncoder().encode(msg);
+    let msgUint8sum = 0;
+    msgUint8.forEach((charUint8) => {
+      msgUint8sum += charUint8;
+    });
+    return msgUint8sum & 0xFF;
+  }
+  window.setInterval(function () {
+    let edit_count = markdown.value.length;
+    let edit_chksum = string_checksum(markdown.value);
+    if (last_edit_count != edit_count || last_edit_chksum != edit_chksum){
+      console.log(edit_count + ' : ' + edit_chksum);
+      last_edit_count  = edit_count;
+      last_edit_chksum = edit_chksum;
+      convert_md2html(markdown.value);
+    }
+  }, 500);
 
   function copy_to_clipboard(idname, message) {
     // コピー対象をJavaScript上で変数として定義する
