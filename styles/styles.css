@@ -65,6 +65,20 @@ footer {
   margin-bottom: 10px;
   background: #88a;
   height: 100%; }
+  .markdownarea .markdown_editor {
+    width: 90%;
+    margin: 0 auto;
+    position: relative; }
+    .markdownarea .markdown_editor .paste_markdown {
+      display: none; }
+    .markdownarea .markdown_editor .clear_markdown {
+      position: absolute;
+      right: -3px;
+      opacity: 0.3;
+      transition: 0.5s ease; }
+      .markdownarea .markdown_editor .clear_markdown:hover {
+        cursor: pointer;
+        opacity: 1.0; }
 
 .htmlarea {
   display: none; }
