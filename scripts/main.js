@@ -6,6 +6,7 @@
   const markdown = document.getElementById("markdown");
   const paste_markdown = document.querySelector(".paste_markdown");
   const clear_markdown = document.querySelector(".clear_markdown");
+  const download_preview = document.querySelector("#preview_download");
 
   var simplemde = new SimpleMDE({
     element: document.getElementById('editor-main'),
@@ -101,9 +102,13 @@
     document.querySelector("#markdown").value = "";
   });
 
-  let html_title = "title";
-  let html_name  = "filename";
-  save_button.addEventListener('click', () => {
+  // save_button.addEventListener('click', () => {
+  download_preview.addEventListener('click', () => {
+    save_preview("#marked-preview");
+  });
+  function save_preview(target_el) {
+    let html_title = "title";
+    let html_name  = "filename";
     html_title = prompt("What HTML title is it ?", "title");
     console.log('a Title of save file is ' + html_title);
     html_name = prompt("What name of HTML file is it ?", "filename");
@@ -111,7 +116,7 @@
     console.log('a file name is ' + html_name);
 
     // refer : https://blog.mudatobunka.org/entry/2015/12/23/211425
-    var html = document.getElementById("marked-preview");
+    var html = document.querySelector(target_el)
     // ソースコードをテキストで取得
     var src = "<body>\n" + html.innerHTML + "\n</body>\n";
     console.log(src.slice(0, 5000));
@@ -156,6 +161,6 @@
     a.href = blobURL;
 
     a.click();
-  });
+  }
 
 }

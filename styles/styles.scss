@@ -70,6 +70,7 @@ footer {
   margin-bottom: 10px;
   background: #88a;
   height: 100%;
+  width: 320px;
   .markdown_editor {
     width: 90%;
     margin: 0 auto;
@@ -100,15 +101,26 @@ footer {
   margin: 20px;
 }
 .previewarea {
+  width: 320px;
   margin-bottom: 10px;
   background: #fff;
-}
-/* preview area styles */
-.previewarea {
   margin: 10px;
   color: #333;
+  .download {
+    opacity: 0.3;
+    transition: 0.5s ease;
+    &:hover {
+      cursor: pointer;
+      opacity: 1.0;
+    }
+  }
+  .preview_viewer {
+    height: 240px;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
 }
-
 .preview {
   font-size: 14px;
   font-family: Verdana, sans-serif;
@@ -148,7 +160,6 @@ footer {
     border-style: inset;
     border-width: 1px;
 }
-
 .preview p {
   line-height: 2;
   margin-bottom: 9px;
