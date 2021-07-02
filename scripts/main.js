@@ -7,6 +7,9 @@
   const paste_markdown = document.querySelector(".paste_markdown");
   const clear_markdown = document.querySelector(".clear_markdown");
   const download_preview = document.querySelector("#preview_download");
+  const view_html = document.querySelector('#view_html');
+  const htmlarea = document.querySelector('#htmlarea');
+  const hide_html = document.querySelector('#hide_html');
 
   var simplemde = new SimpleMDE({
     element: document.getElementById('editor-main'),
@@ -91,7 +94,6 @@
     // コピー結果
     console.log(pasteTarget.textContent);
   }
-
   result_copy_button.addEventListener('click', () => {
     copy_to_clipboard("result", "クリップボードにコピーしました！(HTML結果)");
   });
@@ -105,6 +107,14 @@
   // save_button.addEventListener('click', () => {
   download_preview.addEventListener('click', () => {
     save_preview("#marked-preview");
+  });
+  view_html.addEventListener('click', () => {
+    console.log('show htmlarea');
+    htmlarea.classList.add('is-show')
+  });
+  hide_html.addEventListener('click', () => {
+    console.log('hide htmlarea');
+    htmlarea.classList.remove('is-show')
   });
   function save_preview(target_el) {
     let html_title = "title";

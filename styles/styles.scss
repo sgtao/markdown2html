@@ -66,7 +66,7 @@ footer {
   width: 50%;
   margin: 20px;
 }
-.markdownarea {
+#markdownarea {
   margin-bottom: 10px;
   background: #88a;
   height: 100%;
@@ -90,23 +90,21 @@ footer {
     }
   }
 }
-.htmlarea {
-  display: none;
-}
 .right-side {
   background: #fff;
   float: right;
-  position: center;
   width: 50%;
   margin: 20px;
+  position: relative;
 }
-.previewarea {
+#previewarea {
+  position: absolute;
   width: 320px;
   margin-bottom: 10px;
   background: #fff;
   margin: 10px;
   color: #333;
-  .download {
+  .download, .viewcode {
     opacity: 0.3;
     transition: 0.5s ease;
     &:hover {
@@ -119,6 +117,23 @@ footer {
     width: 90%;
     margin: 0 auto;
     border: 1px solid black;
+  }
+}
+#htmlarea {
+  // display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top:0;
+  margin-bottom: 10px;
+  background-color:rgb(115, 162, 115);
+  z-index: 10;
+  right: -320px;
+  opacity: 0;
+  transition: 0.5s ease;
+  &.is-show {
+    opacity: 1;
+    right: 0;
   }
 }
 .preview {

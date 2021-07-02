@@ -61,53 +61,66 @@ footer {
   width: 50%;
   margin: 20px; }
 
-.markdownarea {
+#markdownarea {
   margin-bottom: 10px;
   background: #88a;
   height: 100%;
   width: 320px; }
-  .markdownarea .markdown_editor {
+  #markdownarea .markdown_editor {
     width: 90%;
     margin: 0 auto;
     position: relative; }
-    .markdownarea .markdown_editor .paste_markdown {
+    #markdownarea .markdown_editor .paste_markdown {
       display: none; }
-    .markdownarea .markdown_editor .clear_markdown {
+    #markdownarea .markdown_editor .clear_markdown {
       position: absolute;
       right: -3px;
       opacity: 0.3;
       transition: 0.5s ease; }
-      .markdownarea .markdown_editor .clear_markdown:hover {
+      #markdownarea .markdown_editor .clear_markdown:hover {
         cursor: pointer;
         opacity: 1.0; }
-
-.htmlarea {
-  display: none; }
 
 .right-side {
   background: #fff;
   float: right;
-  position: center;
   width: 50%;
-  margin: 20px; }
+  margin: 20px;
+  position: relative; }
 
-.previewarea {
+#previewarea {
+  position: absolute;
   width: 320px;
   margin-bottom: 10px;
   background: #fff;
   margin: 10px;
   color: #333; }
-  .previewarea .download {
+  #previewarea .download, #previewarea .viewcode {
     opacity: 0.3;
     transition: 0.5s ease; }
-    .previewarea .download:hover {
+    #previewarea .download:hover, #previewarea .viewcode:hover {
       cursor: pointer;
       opacity: 1.0; }
-  .previewarea .preview_viewer {
+  #previewarea .preview_viewer {
     height: 240px;
     width: 90%;
     margin: 0 auto;
     border: 1px solid black; }
+
+#htmlarea {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  margin-bottom: 10px;
+  background-color: #73a273;
+  z-index: 10;
+  right: -320px;
+  opacity: 0;
+  transition: 0.5s ease; }
+  #htmlarea.is-show {
+    opacity: 1;
+    right: 0; }
 
 .preview {
   font-size: 14px;

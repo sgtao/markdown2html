@@ -27,7 +27,7 @@
     <main class="container">
       <section class="markdown2html">
         <div class="left-side">
-          <section class="markdownarea">
+          <section id="markdownarea">
             <h2>①Markdownの入力フォーム</h2>
             <button type="button" id="preview_button">Preview</button>
             <div class="markdown_editor">
@@ -40,17 +40,19 @@
           </section>
         </div>
         <div class="right-side">
-          <section class="previewarea">
+          <section id="previewarea">
             <h2>②HTMLに変換した結果</h2>
             <img class="download" id="preview_download" src="imgs/outline_file_download_black_24dp.png" alt="download" srcset="">
+            <img class="viewcode" id="view_html" src="imgs/outline_code_black_24dp.png" alt="download" srcset="">
             <div class="preview_viewer">
               <div class="preview" id="marked-preview"></div>
             </div>
           </section>
-          <section class="htmlarea">
-            <h2>※参考）変換結果のHTML記法</h2>
+          <section id="htmlarea">
+            <h2>※参考）変換結果のHTMLコード</h2>
+            <img id="hide_html" src="imgs/outline_clear_black_24dp.png" alt="clear" srcset="">
             <form id="editor-form" class="">
-              <textarea onclick="this.select();" id="result" class="uk-textarea" name="result"  rows="8"  cols=50% readonly></textarea>
+              <textarea onclick="this.select();" id="result" class="uk-textarea" name="result"  rows="12" cols=30% readonly></textarea>
             </form>
             <button type="button" id="result_copy_button">Copy text</button>
           </section>
