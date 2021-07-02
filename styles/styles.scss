@@ -100,7 +100,6 @@ footer {
 #previewarea {
   position: absolute;
   width: 320px;
-  margin-bottom: 10px;
   background: #fff;
   margin: 10px;
   color: #333;
@@ -120,22 +119,32 @@ footer {
   }
 }
 #htmlarea {
-  // display: none;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top:0;
-  margin-bottom: 10px;
+  width: 320px;
   background-color:rgb(115, 162, 115);
+  color: #333;
+  height: 100%;
+  margin: 10px;
   z-index: 10;
-  right: -320px;
+  right: -330px;
   opacity: 0;
   transition: 0.5s ease;
   &.is-show {
     opacity: 1;
     right: 0;
   }
+  img {
+    opacity: 0.3;
+    transition: 0.5s ease;
+    &:hover {
+      cursor: pointer;
+      opacity: 1.0;
+    }
+  }
 }
+// 
+// preview styles
+// 
 .preview {
   font-size: 14px;
   font-family: Verdana, sans-serif;

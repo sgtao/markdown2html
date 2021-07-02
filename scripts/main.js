@@ -2,7 +2,7 @@
 
 {
   const preview_button = document.getElementById("preview_button");
-  const copy_button = document.getElementById("copy_button");
+  const copy_button = document.getElementById("copy_html");
   const markdown = document.getElementById("markdown");
   const paste_markdown = document.querySelector(".paste_markdown");
   const clear_markdown = document.querySelector(".clear_markdown");
@@ -33,6 +33,9 @@
     smartypants: false,
     xhtml: false
   });
+  /*
+   *  left side operations
+   */
   // convert markdown to html
   function convert_md2html(markdown_value) {
     if (markdown_value != null && markdown.value != undefined) {
@@ -72,17 +75,6 @@
       convert_md2html(markdown.value);
     }
   }, 500);
-  function copy_to_clipboard(idname, message) {
-    // コピー対象をJavaScript上で変数として定義する
-    let copyTarget = document.getElementById(idname);
-    console.log(copyTarget);
-    // コピー対象のテキストを選択する
-    copyTarget.select();
-    // 選択しているテキストをクリップボードにコピーする
-    document.execCommand("Copy");
-    // コピーをお知らせする
-    alert(message);
-  }
   function paste_fr_clipboard(idname, message="finish paste") {
     // コピー対象をJavaScript上で変数として定義する
     let pasteTarget = document.getElementById(idname);
@@ -94,17 +86,15 @@
     // コピー結果
     console.log(pasteTarget.textContent);
   }
-  result_copy_button.addEventListener('click', () => {
-    copy_to_clipboard("result", "クリップボードにコピーしました！(HTML結果)");
-  });
   paste_markdown.addEventListener('click', () => {
     paste_fr_clipboard("markdown");
   });
   clear_markdown.addEventListener('click', () => {
     document.querySelector("#markdown").value = "";
   });
-
-  // save_button.addEventListener('click', () => {
+  /*
+   *  right side operations
+   */
   download_preview.addEventListener('click', () => {
     save_preview("#marked-preview");
   });
@@ -116,6 +106,22 @@
     console.log('hide htmlarea');
     htmlarea.classList.remove('is-show')
   });
+  copy_button.addEventListener('click', () => {
+    copy_to_clipboard("result", "クリップボードにコピーしました！(HTML結果)");
+  });
+  // copy html function
+  function copy_to_clipboard(idname, message) {
+    // コピー対象をJavaScript上で変数として定義する
+    let copyTarget = document.getElementById(idname);
+    console.log(copyTarget);
+    // コピー対象のテキストを選択する
+    copyTarget.select();
+    // 選択しているテキストをクリップボードにコピーする
+    document.execCommand("Copy");
+    // コピーをお知らせする
+    alert(message);
+  }
+  // download_preview function
   function save_preview(target_el) {
     let html_title = "title";
     let html_name  = "filename";
@@ -149,7 +155,6 @@
     }
     htmlTag += '>';
     console.log(htmlTag);
-
     var headTag= '<head>\n';
     headTag += '<title>' + html_title + '</title>\n';
     headTag += '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n';
@@ -172,5 +177,4 @@
 
     a.click();
   }
-
 }
