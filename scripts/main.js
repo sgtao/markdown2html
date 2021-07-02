@@ -123,13 +123,15 @@
   }
   // download_preview function
   function save_preview(target_el) {
-    let html_title = "title";
-    let html_name  = "filename";
-    html_title = prompt("What HTML title is it ?", "title");
-    console.log('a Title of save file is ' + html_title);
-    html_name = prompt("What name of HTML file is it ?", "filename");
+    let html_title = prompt("What HTML title is it ?", "title");
+    let html_name = prompt("What name of HTML file is it ?", "filename");
+    if (html_name === null) { 
+      console.log('filename is not specified. so , cancel save')
+      return;
+    }
     html_name += '.html';
     console.log('a file name is ' + html_name);
+    console.log('a Title of save file is ' + html_title);
 
     // refer : https://blog.mudatobunka.org/entry/2015/12/23/211425
     var html = document.querySelector(target_el)
@@ -147,7 +149,7 @@
       + '>';
     console.log(doctype);
 
-    var htmlTag = '<html';
+    var htmlTag = '<html lang="ja" ';
     var attrs = html.attributes;
     for (var i = 0, n = attrs.length; i < n; i++) {
       var attr = attrs[i];
