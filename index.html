@@ -29,10 +29,10 @@
         <div class="left-side">
           <section id="markdownarea">
             <h2>①Markdownの入力フォーム</h2>
-            <button type="button" id="preview_button"><img src="imgs/outline_transform_black_24dp.png" alt="" srcset="">Preview</button>
+            <button type="button" id="preview_button"><img src="imgs/outline_transform_black_24dp.png" title="convert markdown" srcset="">Preview</button>
             <div class="markdown_editor">
               <img class="paste_markdown" src="imgs/outline_content_paste_black_24dp.png" alt="paste" srcset="">
-              <img class="clear_markdown" src="imgs/outline_clear_black_24dp.png" alt="clear" srcset="">
+              <img class="clear_markdown" src="imgs/outline_clear_black_24dp.png" title="clear" srcset="">
               <form id="editor-form" class="">
                 <textarea id="markdown" name="markdown" rows="12" cols=30% ></textarea>
               </form>
@@ -42,16 +42,16 @@
         <div class="right-side">
           <section id="previewarea">
             <h2>②HTMLに変換した結果</h2>
-            <img class="download" id="preview_download" src="imgs/outline_file_download_black_24dp.png" alt="download" srcset="">
-            <img class="viewcode" id="view_html" src="imgs/outline_code_black_24dp.png" alt="download" srcset="">
+            <img class="download" id="preview_download" src="imgs/outline_file_download_black_24dp.png" title="download" srcset="">
+            <img class="viewcode" id="view_html" src="imgs/outline_code_black_24dp.png" title="view HTML" srcset="">
             <div class="preview_viewer">
               <div class="preview" id="marked-preview"></div>
             </div>
           </section>
           <section id="htmlarea">
             <h2>※参考）HTMLコード</h2>
-            <img id="copy_html" src="imgs/outline_content_copy_black_24dp.png" alt="clear" srcset="">
-            <img id="hide_html" src="imgs/outline_clear_black_24dp.png" alt="clear" srcset="">
+            <img id="copy_html" src="imgs/outline_content_copy_black_24dp.png" title="copy" srcset="">
+            <img id="hide_html" src="imgs/outline_clear_black_24dp.png" title="hide HTML" srcset="">
             <form id="editor-form" class="">
               <textarea onclick="this.select();" id="result" class="uk-textarea" name="result"  rows="12" cols=30% readonly></textarea>
             </form>
